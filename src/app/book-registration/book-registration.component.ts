@@ -22,8 +22,8 @@ export class BookRegistrationComponent {
               private bookService: BookService) {
     this.bookForm = formBuilder.group({
       title: formBuilder.control('', [Validators.required,
-          Validators.minLength(4), Validators.maxLength(32)],
-        [this.validateTitleExistence.bind(this)]),
+        Validators.minLength(4), Validators.maxLength(32)]/*,
+        [this.validateTitleExistence.bind(this)]*/),
       author: formBuilder.control('', [Validators.required,
         Validators.minLength(4), Validators.maxLength(32), this.validateAuthor]),
     })
