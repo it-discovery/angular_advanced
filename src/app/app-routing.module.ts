@@ -6,10 +6,17 @@ import {NewsComponent} from "./news/news.component";
 import {HomeComponent} from "./home/home.component";
 import {BookDetailsComponent} from "./book-details/book-details.component";
 import {BookService} from "./book.service";
+import {AdminComponent} from "./admin/admin.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'books', component: BooksComponent},
+  {
+    path: 'admin', component: AdminComponent,
+    canActivate: [(route: ActivatedRouteSnapshot) => {
+      return route.queryParams['logged'] === 'true';
+    }]
+  },
   {
     path: 'books/:id', component: BookDetailsComponent,
     resolve: {

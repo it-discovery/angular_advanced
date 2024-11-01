@@ -13,6 +13,10 @@
           <li class="nav-item">
             <a class="nav-link" [routerLink]="'/news'" routerLinkActive="active">News</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="'/admin'" [queryParams]="{logged: true}"
+               routerLinkActive="active">Admin</a>
+          </li>
         </ul>
       </div>
     </div>

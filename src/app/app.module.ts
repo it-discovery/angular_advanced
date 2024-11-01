@@ -16,6 +16,7 @@ import {NewsComponent} from './news/news.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {HomeComponent} from './home/home.component';
 import {StatusComponent} from './status/status.component';
+import {AdminComponent} from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {StatusComponent} from './status/status.component';
     BookDetailsComponent,
     NewsComponent,
     HomeComponent,
-    StatusComponent
+    StatusComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
