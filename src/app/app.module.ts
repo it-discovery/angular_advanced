@@ -17,6 +17,9 @@ import {AppRoutingModule} from "./app-routing.module";
 import {HomeComponent} from './home/home.component';
 import {StatusComponent} from './status/status.component';
 import {AdminComponent} from './admin/admin.component';
+import {BannerHeaderComponent} from './banner-header/banner-header.component';
+import {DiscountsComponent} from './discounts/discounts.component';
+import {BestBuyComponent} from './best-buy/best-buy.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import {AdminComponent} from './admin/admin.component';
     NewsComponent,
     HomeComponent,
     StatusComponent,
-    AdminComponent
+    AdminComponent,
+    BannerHeaderComponent,
+    DiscountsComponent,
+    BestBuyComponent
   ],
   imports: [
     BrowserModule,
