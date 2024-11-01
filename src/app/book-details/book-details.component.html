@@ -1,5 +1,5 @@
 <div [ngClass]="{javascript: isJavaScript(book()) }">
-  <h4>{{ book()?.title | quote }}</h4>
+  <a routerLink="/books/{{book()?.id}}" routerLinkActive="active"><h4>Book title: {{ book()?.title }}</h4></a>
   <div>Author: {{ book()?.author }}</div>
   <div>Year: {{ book()?.year }}</div>
   <div>Pages: {{ book()?.pages }}</div>

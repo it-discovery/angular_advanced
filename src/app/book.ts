@@ -1,4 +1,4 @@
-type StringOrEmpty = string | undefined;
+//type StringOrEmpty = string | undefined;
 
 export class Book {
   // title: StringOrEmpty;
@@ -9,7 +9,7 @@ export class Book {
 
   price?: number;
 
-  constructor(public title: string, public year: number,
+  constructor(public id: number, public title: string, public year: number,
               public author: string) {
   }
 }

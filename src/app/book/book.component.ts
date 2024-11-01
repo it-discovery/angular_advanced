@@ -15,6 +15,7 @@ export class BookComponent implements OnInit {
 
   constructor() {
     this.book = {
+      id: 1,
       title: 'Angular 17',
       year: 2024, author: 'N/A', pages: 500, description: 'Development of Angular applications'
     };

@@ -9,10 +9,7 @@ import {Book} from "../book";
 })
 export class BookDetailsComponent {
 
-  // @Input({required: true})
-  // book: Book | undefined;
-
-  book = input.required<Book | undefined>();
+  book = input<Book | undefined>();
 
   isJavaScript(book: Book | undefined): boolean {
     if (book) {
