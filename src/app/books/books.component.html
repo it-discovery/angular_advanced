@@ -1,6 +1,6 @@
 <div>
   <cdk-virtual-scroll-viewport appendOnly itemSize="10" minBufferPx="300" maxBufferPx="600" style="height: 400px">
-    <div *cdkVirtualFor="let book of books$ | async">
+    <div *cdkVirtualFor="let book of books()">
       <app-book-details [book]="book"></app-book-details>
     </div>
   </cdk-virtual-scroll-viewport>

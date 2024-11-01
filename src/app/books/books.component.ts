@@ -1,7 +1,7 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {BookService} from "../book.service";
 import {Book} from "../book";
-import {Observable} from "rxjs";
+import {toSignal} from "@angular/core/rxjs-interop";
 
 @Component({
   selector: 'app-books',
@@ -11,11 +11,9 @@ import {Observable} from "rxjs";
 })
 export class BooksComponent {
 
-  books$: Observable<Book[]>;
+  bookService = inject(BookService);
 
-  constructor(private bookService: BookService) {
-    this.books$ = this.bookService.getBooks();
-  }
+  books = toSignal(this.bookService.getBooks());
 
   saveBook(book: Book): void {
     this.bookService.save(book);
