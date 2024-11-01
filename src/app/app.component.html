@@ -25,7 +25,9 @@
     </div>
   </nav>
 </header>
-<app-banner-header></app-banner-header>
+@defer (on timer(5s)) {
+  <app-banner-header></app-banner-header>
+}
 <app-status></app-status>
 
 <router-outlet></router-outlet>
