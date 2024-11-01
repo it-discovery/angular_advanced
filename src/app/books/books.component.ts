@@ -1,18 +1,20 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component} from '@angular/core';
 import {BookService} from "../book.service";
 import {Book} from "../book";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
-  styleUrl: './books.component.css'
+  styleUrl: './books.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BooksComponent {
 
-  books: Book[] = [];
+  books$: Observable<Book[]>;
 
   constructor(private bookService: BookService) {
-    this.bookService.getBooks().subscribe(value => this.books = value);
+    this.books$ = this.bookService.getBooks();
   }
 
   saveBook(book: Book): void {

@@ -1,21 +1,22 @@
-import {Component} from '@angular/core';
+import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
 import {NavigationEnd, NavigationStart, Router} from "@angular/router";
 
 @Component({
   selector: 'app-status',
   templateUrl: './status.component.html',
-  styleUrl: './status.component.css'
+  styleUrl: './status.component.css',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class StatusComponent {
 
-  status: string | undefined;
+  status = signal('');
 
-  constructor(private router: Router) {
+  constructor(router: Router) {
     router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
-        this.status = 'Started: ' + event.url;
+        this.status.set('Started: ' + event.url);
       } else if (event instanceof NavigationEnd) {
-        this.status = 'Ended: ' + event.url;
+        this.status.set('Ended: ' + event.url);
       }
     })
   }
