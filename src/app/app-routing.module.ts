@@ -24,7 +24,7 @@ const routes: Routes = [
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes, {bindToComponentInputs: true})
   ], exports: [RouterModule],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}]
 })
