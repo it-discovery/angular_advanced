@@ -15,6 +15,7 @@ import {ScrollingModule} from "@angular/cdk/scrolling";
 import {NewsComponent} from './news/news.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {HomeComponent} from './home/home.component';
+import {StatusComponent} from './status/status.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import {HomeComponent} from './home/home.component';
     BookRegistrationComponent,
     BookDetailsComponent,
     NewsComponent,
-    HomeComponent
+    HomeComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,
