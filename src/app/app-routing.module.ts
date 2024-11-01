@@ -7,6 +7,7 @@ import {HomeComponent} from "./home/home.component";
 import {BookDetailsComponent} from "./book-details/book-details.component";
 import {BookService} from "./book.service";
 import {AdminComponent} from "./admin/admin.component";
+import {AboutComponent} from "./about/about.component";
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -24,7 +25,8 @@ const routes: Routes = [
         .findBookById(route.params['id'])
     }
   },
-  {path: 'news', component: NewsComponent}
+  {path: 'news', component: NewsComponent},
+  {path: 'about', component: AboutComponent}
 ];
 
 @NgModule({
