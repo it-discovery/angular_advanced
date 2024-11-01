@@ -12,6 +12,9 @@ import {HighlightDirective} from "./highlight.directive";
 import {BookDetailsComponent} from './book-details/book-details.component';
 import {HttpClientModule} from "@angular/common/http";
 import {ScrollingModule} from "@angular/cdk/scrolling";
+import {NewsComponent} from './news/news.component';
+import {AppRoutingModule} from "./app-routing.module";
+import {HomeComponent} from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,9 @@ import {ScrollingModule} from "@angular/cdk/scrolling";
     BookComponent,
     BooksComponent,
     BookRegistrationComponent,
-    BookDetailsComponent
+    BookDetailsComponent,
+    NewsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +33,8 @@ import {ScrollingModule} from "@angular/cdk/scrolling";
     ReactiveFormsModule,
     HighlightDirective,
     HttpClientModule,
-    ScrollingModule
+    ScrollingModule,
+    AppRoutingModule
   ],
   providers: [{
     provide: BookService,
