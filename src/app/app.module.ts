@@ -11,6 +11,7 @@ import {BookRegistrationComponent} from './book-registration/book-registration.c
 import {HighlightDirective} from "./highlight.directive";
 import {BookDetailsComponent} from './book-details/book-details.component';
 import {HttpClientModule} from "@angular/common/http";
+import {ScrollingModule} from "@angular/cdk/scrolling";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {HttpClientModule} from "@angular/common/http";
     FormsModule,
     ReactiveFormsModule,
     HighlightDirective,
-    HttpClientModule
+    HttpClientModule,
+    ScrollingModule
   ],
   providers: [{
     provide: BookService,
