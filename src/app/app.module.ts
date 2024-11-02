@@ -10,7 +10,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {BookRegistrationComponent} from './book-registration/book-registration.component';
 import {HighlightDirective} from "./highlight.directive";
 import {BookDetailsComponent} from './book-details/book-details.component';
-import {HttpClientModule} from "@angular/common/http";
+import {provideHttpClient} from "@angular/common/http";
 import {ScrollingModule} from "@angular/cdk/scrolling";
 import {NewsComponent} from './news/news.component';
 import {AppRoutingModule} from "./app-routing.module";
@@ -20,6 +20,7 @@ import {AdminComponent} from './admin/admin.component';
 import {BannerHeaderComponent} from './banner-header/banner-header.component';
 import {DiscountsComponent} from './discounts/discounts.component';
 import {BestBuyComponent} from './best-buy/best-buy.component';
+import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -42,14 +43,15 @@ import {BestBuyComponent} from './best-buy/best-buy.component';
     FormsModule,
     ReactiveFormsModule,
     HighlightDirective,
-    HttpClientModule,
     ScrollingModule,
     AppRoutingModule
   ],
   providers: [{
     provide: BookService,
     useClass: BookService
-  }],
+  },
+    provideHttpClient(),
+    provideAnimationsAsync()],
   bootstrap: [AppComponent]
 })
 export class AppModule {
