@@ -1,6 +1,8 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {StatusComponent} from './status.component';
+import {NotificationService} from "../core/notification.service";
+import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 describe('StatusComponent', () => {
   let component: StatusComponent;
@@ -8,7 +10,9 @@ describe('StatusComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [StatusComponent]
+      declarations: [StatusComponent],
+      imports: [MatSnackBarModule],
+      providers: [NotificationService]
     })
       .compileComponents();
 

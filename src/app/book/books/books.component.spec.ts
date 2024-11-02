@@ -1,6 +1,8 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {BooksComponent} from './books.component';
+import {BookService} from "../../core/book.service";
+import {ScrollingModule} from "@angular/cdk/scrolling";
 
 describe('BooksComponent', () => {
   let component: BooksComponent;
@@ -8,7 +10,9 @@ describe('BooksComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BooksComponent]
+      declarations: [BooksComponent],
+      providers: [BookService],
+      imports: [ScrollingModule]
     })
       .compileComponents();
 

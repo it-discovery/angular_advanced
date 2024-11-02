@@ -1,6 +1,11 @@
 import {ComponentFixture, TestBed} from '@angular/core/testing';
 
 import {BookRegistrationComponent} from './book-registration.component';
+import {BookService} from "../../core/book.service";
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatButtonModule} from "@angular/material/button";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 describe('BookRegistrationComponent', () => {
   let component: BookRegistrationComponent;
@@ -8,7 +13,9 @@ describe('BookRegistrationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [BookRegistrationComponent]
+      declarations: [BookRegistrationComponent],
+      providers: [BookService],
+      imports: [MatDialogModule, MatFormFieldModule, MatButtonModule, FormsModule, ReactiveFormsModule]
     })
       .compileComponents();
 

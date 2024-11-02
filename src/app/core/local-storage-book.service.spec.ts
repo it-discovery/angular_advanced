@@ -6,7 +6,9 @@ describe('LocalStorageBookService', () => {
   let service: LocalStorageBookService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
+    TestBed.configureTestingModule({
+      providers: [LocalStorageBookService],
+    });
     service = TestBed.inject(LocalStorageBookService);
   });
 

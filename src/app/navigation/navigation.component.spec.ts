@@ -7,6 +7,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 
 import {NavigationComponent} from './navigation.component';
+import {provideRouter, RouterModule} from "@angular/router";
 
 describe('NavigationComponent', () => {
   let component: NavigationComponent;
@@ -22,7 +23,9 @@ describe('NavigationComponent', () => {
         MatListModule,
         MatSidenavModule,
         MatToolbarModule,
-      ]
+        RouterModule
+      ],
+      providers: [provideRouter([])]
     }).compileComponents();
   }));
 
