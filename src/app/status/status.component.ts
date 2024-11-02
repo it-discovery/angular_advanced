@@ -1,5 +1,6 @@
-import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject, signal} from '@angular/core';
 import {NavigationEnd, NavigationStart, Router} from "@angular/router";
+import {NotificationService} from "../core/notification.service";
 
 @Component({
   selector: 'app-status',
@@ -11,12 +12,14 @@ export class StatusComponent {
 
   status = signal('');
 
+  notificationService = inject(NotificationService);
+
   constructor(router: Router) {
     router.events.subscribe((event) => {
       if (event instanceof NavigationStart) {
         this.status.set('Started: ' + event.url);
       } else if (event instanceof NavigationEnd) {
-        this.status.set('Ended: ' + event.url);
+        this.notificationService.showMessage('Ended: ' + event.url, 'Book shop');
       }
     })
   }
