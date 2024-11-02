@@ -1,7 +1,6 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {BookService} from "../book.service";
 import {Book} from "../book";
-import {toSignal} from "@angular/core/rxjs-interop";
 import {MatDialog} from "@angular/material/dialog";
 import {BookRegistrationComponent} from "../book-registration/book-registration.component";
 
@@ -17,7 +16,7 @@ export class BooksComponent {
 
   matDialog = inject(MatDialog);
 
-  books = toSignal(this.bookService.getBooks());
+  books = this.bookService.getBooks();
 
   saveBook(book: Book): void {
     this.bookService.save(book);

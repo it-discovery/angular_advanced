@@ -1,14 +1,14 @@
-import {Injectable} from '@angular/core';
+import {Injectable, signal, Signal, WritableSignal} from '@angular/core';
 import {Book} from "./book";
 import {delay, map, Observable, of} from "rxjs";
 
 @Injectable()
 export class BookService {
 
-  private readonly books: Book[];
+  private readonly books: WritableSignal<Book[]>;
 
   constructor() {
-    this.books = [{
+    this.books = signal([{
       id: 1,
       title: 'JavaScript: The Good Parts',
       year: 2008,
@@ -24,26 +24,26 @@ export class BookService {
       pages: 364,
       price: 1500,
       description: 'Build enterprise-ready, industrial strength web applications using TypeScript and leading JavaScript frameworks'
-    }];
+    }]);
   }
 
-  getBooks(): Observable<Book[]> {
-    return of(this.books).pipe(delay(1000));
+  getBooks(): Signal<Book[]> {
+    return this.books;
   }
 
   save(book: Book) {
-    this.books.push(book);
+    this.books.update(books => [...books, book]);
   }
 
   bookExists(title: string): Observable<boolean> {
-    return of(this.books).pipe(delay(100)).pipe(map(values => values.map(book => book.title)
+    return of(this.books()).pipe(delay(100)).pipe(map(values => values.map(book => book.title)
       .includes(title)))
   }
 
   findBookById(id: number): Book | null {
-    const idx = this.books.findIndex(book => book.id === Number(id));
+    const idx = this.books().findIndex(book => book.id === Number(id));
     if (idx > -1) {
-      return this.books[idx];
+      return this.books()[idx];
     }
     return null;
   }
