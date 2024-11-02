@@ -1,24 +1,25 @@
-<div class="card">
-  <div class="card-header">Book details</div>
-  <div class="card-body">
-    <form [formGroup]="bookForm" (ngSubmit)="save()">
+<h2 mat-dialog-title>Book details</h2>
+<mat-dialog-content>
+  <form [formGroup]="bookForm" (ngSubmit)="save()">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Enter book title" name="title" formControlName="title">
+    </mat-form-field>
+    @if (isValid('title')) {
+      <div class="alert alert-danger">Please, enter valid book title</div>
+    }
+    <div>
       <mat-form-field>
-        <mat-label>Title</mat-label>
-        <input matInput placeholder="Enter book title" name="title" formControlName="title">
+        <mat-label>Author</mat-label>
+        <input matInput placeholder="Enter book author" name="author" formControlName="author">
       </mat-form-field>
-      @if (isValid('title')) {
-        <div class="alert alert-danger">Please, enter valid book title</div>
-      }
-      <div>
-        <mat-form-field>
-          <mat-label>Author</mat-label>
-          <input matInput placeholder="Enter book author" name="author" formControlName="author">
-        </mat-form-field>
-      </div>
-      @if (isValid('author')) {
-        <div class="alert alert-danger">Please, enter valid book author</div>
-      }
-      <button type="submit" mat-button mat-flat-button [disabled]="!bookForm.valid">Save</button>
-    </form>
-  </div>
-</div>
+    </div>
+    @if (isValid('author')) {
+      <div class="alert alert-danger">Please, enter valid book author</div>
+    }
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button type="submit" mat-button mat-flat-button [mat-dialog-close]="true" [disabled]="!bookForm.valid">Save</button>
+  <button mat-button mat-flat-button [mat-dialog-close]="false">Cancel</button>
+</mat-dialog-actions>
