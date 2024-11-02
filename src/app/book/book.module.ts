@@ -11,7 +11,7 @@ import {ScrollingModule} from "@angular/cdk/scrolling";
 import {MatButtonModule} from "@angular/material/button";
 import {MatInputModule} from "@angular/material/input";
 import {BookDetailsComponent} from "./book-details/book-details.component";
-import {RouterModule} from "@angular/router";
+import {BookRoutingModule} from "./book-routing.module";
 
 
 @NgModule({
@@ -26,7 +26,7 @@ import {RouterModule} from "@angular/router";
     MatInputModule,
     QuotePipe,
     HighlightDirective,
-    RouterModule
+    BookRoutingModule
   ]
 })
 export class BookModule {
