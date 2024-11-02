@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
-import {BookService} from "../book.service";
+import {BookService} from "../../core/book.service";
 import {Book} from "../book";
 import {MatDialog} from "@angular/material/dialog";
 import {BookRegistrationComponent} from "../book-registration/book-registration.component";

@@ -4,7 +4,7 @@ import {DomSanitizer} from "@angular/platform-browser";
 import {Book} from "../book";
 import {BookForm} from "../book-form";
 import {map, Observable} from "rxjs";
-import {BookService} from "../book.service";
+import {BookService} from "../../core/book.service";
 
 @Component({
   selector: 'app-book-registration',

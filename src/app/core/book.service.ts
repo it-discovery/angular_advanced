@@ -1,5 +1,5 @@
 import {Injectable, signal, Signal, WritableSignal} from '@angular/core';
-import {Book} from "./book";
+import {Book} from "../book/book";
 import {delay, map, Observable, of} from "rxjs";
 
 @Injectable()

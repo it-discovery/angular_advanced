@@ -1,11 +1,11 @@
 import {inject, NgModule} from '@angular/core';
 import {CommonModule, HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {ActivatedRouteSnapshot, RouterModule, Routes} from "@angular/router";
-import {BooksComponent} from "./books/books.component";
+import {BooksComponent} from "./book/books/books.component";
 import {NewsComponent} from "./news/news.component";
 import {HomeComponent} from "./home/home.component";
-import {BookDetailsComponent} from "./book-details/book-details.component";
-import {BookService} from "./book.service";
+import {BookDetailsComponent} from "./book/book-details/book-details.component";
+import {BookService} from "./core/book.service";
 import {AdminComponent} from "./admin/admin.component";
 import {AboutComponent} from "./about/about.component";
 
