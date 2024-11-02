@@ -1,33 +1,7 @@
-<header>
-  <nav class="navbar navbar-expand-lg bg-light">
-    <div class="container-fluid">
-      <a class="navbar-brand" routerLink="" routerLinkActive="active">IT-DISCOVERY</a>
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="'/'" routerLinkActive="active">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="'/books'" routerLinkActive="active">Books</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="'/news'" routerLinkActive="active">News</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="'/admin'" [queryParams]="{logged: true}"
-               routerLinkActive="active">Admin</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" [routerLink]="'/about'" routerLinkActive="active">About</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-</header>
 @defer (on timer(5s)) {
   <app-banner-header></app-banner-header>
 }
 <app-status></app-status>
+<app-navigation></app-navigation>
 
-<router-outlet></router-outlet>
+

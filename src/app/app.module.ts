@@ -21,6 +21,17 @@ import {BannerHeaderComponent} from './banner-header/banner-header.component';
 import {DiscountsComponent} from './discounts/discounts.component';
 import {BestBuyComponent} from './best-buy/best-buy.component';
 import {provideAnimationsAsync} from '@angular/platform-browser/animations/async';
+import {MatButtonModule} from "@angular/material/button";
+import {MatInputModule} from "@angular/material/input";
+import {NavigationComponent} from './navigation/navigation.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
+import {DashboardComponent} from './dashboard/dashboard.component';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatCardModule} from '@angular/material/card';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
@@ -35,7 +46,9 @@ import {provideAnimationsAsync} from '@angular/platform-browser/animations/async
     AdminComponent,
     BannerHeaderComponent,
     DiscountsComponent,
-    BestBuyComponent
+    BestBuyComponent,
+    NavigationComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +57,16 @@ import {provideAnimationsAsync} from '@angular/platform-browser/animations/async
     ReactiveFormsModule,
     HighlightDirective,
     ScrollingModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatButtonModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule
   ],
   providers: [{
     provide: BookService,
