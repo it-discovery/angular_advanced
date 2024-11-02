@@ -19,7 +19,7 @@ export class StatusComponent {
       if (event instanceof NavigationStart) {
         this.status.set('Started: ' + event.url);
       } else if (event instanceof NavigationEnd) {
-        this.notificationService.showMessage('Ended: ' + event.url, 'Book shop');
+        this.notificationService.showMessage('Ended: ' + event.url);
       }
     })
   }
