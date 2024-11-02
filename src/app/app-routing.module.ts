@@ -2,7 +2,6 @@ import {inject, NgModule} from '@angular/core';
 import {CommonModule, HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {ActivatedRouteSnapshot, RouterModule, Routes} from "@angular/router";
 import {BooksComponent} from "./book/books/books.component";
-import {NewsComponent} from "./news/news.component";
 import {HomeComponent} from "./home/home.component";
 import {BookDetailsComponent} from "./book/book-details/book-details.component";
 import {BookService} from "./core/book.service";
@@ -25,7 +24,10 @@ const routes: Routes = [
         .findBookById(route.params['id'])
     }
   },
-  {path: 'news', component: NewsComponent},
+  {
+    path: 'news',
+    loadChildren: () => import('./news/news.module').then(m => m.NewsModule)
+  },
   {path: 'about', component: AboutComponent}
 ];
 
