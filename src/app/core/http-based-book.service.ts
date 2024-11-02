@@ -7,7 +7,7 @@ import {toSignal} from "@angular/core/rxjs-interop";
 @Injectable({
   providedIn: 'root'
 })
-export class HttpBasedBookServiceService {
+export class HttpBasedBookService {
 
   constructor(private http: HttpClient) {
   }
